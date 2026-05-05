@@ -1,0 +1,756 @@
+
+/* ================= HEADER / NAVBAR ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.mobileNav{
+  display:none;
+}
+.main-head{
+  width:100%;
+  height:90px;
+  padding:0 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#fff;
+  background:#000;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  transition:transform .4s ease;
+
+  box-shadow:
+  0 25px 45px rgba(0,0,0,.7),
+  0 8px 15px rgba(0,0,0,.5),
+  inset 0 1px 0 rgba(255,255,255,.3);
+}
+/* jab header hide hoga */
+.hide-header{
+  transform: translateY(-120%);
+}
+
+/* LOGO */
+.logo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top: 20px;
+}
+.logo:hover{
+  transform:scale(1.1);
+}
+.SearchLogo{
+  width: 24px;
+  height: 24px;
+   position: absolute;
+  right: 280px;
+}
+.searchP{
+  position: absolute;
+  top :200px;
+  right: 500px;
+}
+
+/* default hidden */
+.SearchProduct{
+  width:0;
+  opacity:0;
+  padding:0;
+  border:none;
+  outline:none;
+  transition:0.4s ease;
+  position: absolute;
+  top :37px;
+  right: 330px;
+}
+
+/* jab icon click hoga */
+.showSearch{
+  width:250px;
+  opacity:1;
+  padding:8px 15px;
+  border:1px solid #ccc;
+  border-radius:20px;
+  position: absolute;
+  right: 330px;
+  top :30px;
+}
+
+/* icon active effect */
+.SearchLogo{
+  cursor:pointer;
+  transition:.3s;
+}
+
+.SearchLogo.active{
+  transform: scale(1);
+}
+.SearchDropdown{
+  position:absolute;
+  top:65px;
+  width:240px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  color: black;
+  right: 334px;
+
+}
+
+/* dropdown items */
+.SearchDropdown p{
+  margin:0;
+  padding:10px 15px;
+  cursor:pointer;
+  color: black;
+}
+
+.SearchDropdown p:hover{
+  background:#f2f2f2;
+}
+/* sdgjbvDSBV*/
+/* NAV MENU */
+.head-A ul{
+  display:flex;
+  list-style:none;
+  gap:50px;
+}
+
+.head-A li{
+  cursor:pointer;
+  font-weight:500;
+  letter-spacing:1px;
+  position:relative;
+  transition:0.3s;
+}
+
+.head-A li::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  background:#ffb703;
+  left:0;
+  bottom:-5px;
+  transition:0.3s;
+}
+
+.head-A li:hover{
+  color:#ffb703;
+}
+
+.head-A li:hover::after{
+  width:100%;
+}
+.cartIcon{
+  font-size:22px;
+  cursor:pointer;
+  transition:0.3s;
+  position:absolute;
+  right: 170px;  
+}
+
+/* RIGHT SIDE BUTTONS */
+.H{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+/* LOGIN BUTTON */
+.LSighupbtn{
+  padding:10px 22px;
+  border-radius:25px;
+  background:#ffb703;
+  color:black;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.LSighupbtn:hover{
+  background:#fb8500;
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* HAMBURGER */
+.Slid_Bar{
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  margin-right: 0px;
+  justify-content:center;
+  font-size:30px;
+  cursor:pointer;
+  color:#fff;
+  position:relative;
+  background: rgba(255,255,255,0.08);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.25);
+  box-shadow:
+      0 0 15px rgba(255,183,3,0.35),
+      inset 0 0 8px rgba(255,255,255,0.15);
+      position: absolute;
+      right: -5px;
+
+  transition: all .35s ease;
+}
+.Slid_Bar:hover{
+  transform:scale(1.2);
+  color:#ffb703;
+}
+.Sighup-header{
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all .3s ease;
+}
+
+/* hover effect */
+.Sighup-header:hover{
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* click effect */
+.Sighup-header:active{
+  transform: scale(.95);
+}
+/* ===== SIDEBAR BASE ===== */
+/* ===== HIDDEN STATE ===== */
+.cart{
+  position: fixed;
+  top: 0;
+  right: -420px;   /* hide outside screen */
+  width: 380px;
+  max-width: 100%;
+  height: 100vh;
+  padding: 25px;
+  z-index: 1000;
+
+  background: linear-gradient(180deg,#0f0f0f,#000);
+  box-shadow: -15px 0 60px rgba(0,0,0,0.9);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+
+  transition: right .45s cubic-bezier(.77,0,.18,1);
+}
+
+/* ===== OPEN STATE ===== */
+.cart-2{
+  right: 0;
+}  
+/* ===== CLOSE BUTTON ===== */
+.close{
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 22px;
+  color: #aaa;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.close:hover{
+  color: #ff3d00;
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* ===== PROFILE CARD ===== */
+.Loggercontent{
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 15px;
+
+  background: rgba(18,18,18,0.9);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.9);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  color: white;
+}
+
+/* ===== AVATAR ===== */
+.LogginLogo{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+  font-weight: bold;
+
+  background: linear-gradient(135deg,#ff0080,#7928ca,#00c6ff);
+  background-size: 200% 200%;
+  animation: gradientMove 6s infinite linear;
+  box-shadow: 0 0 25px rgba(255,0,128,0.6);
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.Loggercontent p{
+  font-size: 20px;
+  color: #d0d0d0;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.LogOutbtn{
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+
+  background: linear-gradient(135deg,#ff0080,#ff3d00);
+  box-shadow: 0 0 18px rgba(255,0,128,0.6);
+  transition: .3s;
+}
+
+.LogOutbtn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(255,0,128,0.9);
+}
+
+/* ===== ADMIN BUTTONS ===== */
+.InSliderAdminForOpen,
+.cart button:not(.close):not(.LogOutbtn){
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #ddd;
+  cursor: pointer;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.InSliderAdminForOpen:hover,
+.cart button:not(.close):not(.LogOutbtn):hover{
+  background: linear-gradient(135deg,#7928ca,#00c6ff);
+  color: white;
+  box-shadow: 0 0 20px rgba(0,198,255,0.6);
+}
+@media screen and (max-width: 489px) {
+  .cart {
+  top :10px;
+  right: -100%;
+  width: 40%; 
+  height: 50%;
+  z-index: 1000;
+  padding: 25px;
+  background: linear-gradient(180deg,#0f0f0f,#000);
+  box-shadow: -15px 0 60px rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px 0px 0px 20px;
+  }
+  .cart-2{
+    right: 0%
+  }
+  .logo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top: 20px;
+  position: absolute;
+  left: 10px;
+}
+.logo:hover{
+  transform:scale(1.5);
+}
+.Slid_Bar{
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  color:#fff;
+  position:relative;
+  background: rgba(255,255,255,0.08);
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.25);
+  box-shadow:
+      0 0 15px rgba(255,183,3,0.35),
+      inset 0 0 8px rgba(255,255,255,0.15);
+      position: absolute;
+      right: -30px;
+
+  transition: all .35s ease;
+}
+
+  .head-R{
+    color: white; 
+    position: absolute;
+    left: 0px; 
+    top: 0px ;
+  }
+  .SearchLogo{
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 120px;  
+  }
+  .SearchDropdown{
+  position:absolute;
+  top:105px;
+  right: 5px; 
+  width:97%;
+  background:#fff;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  color: black;
+  left: 5px;
+  }
+  .SearchProduct{
+  width:100%;
+  opacity:0;
+  padding:0;
+  border:none;
+  outline:none;
+  transition:0.4s ease;
+  position: absolute;
+  top :60px;
+  right: 5px;
+  left: 5px;
+}
+.SearchDropdown p:hover{
+  background:#f2f2f2;
+}
+  .showSearch{
+  width:97%;
+  padding:8px 15px;
+  height: 30px;
+  border:1px solid #ccc;
+  border-radius:0px;
+  position: absolute;
+  top :70px;
+  opacity: 1;
+  right: 5px;
+  left: 5px;
+
+}
+.cartIcon{
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+  position:absolute;
+  right: 60px;  
+}
+.head-R li{
+  cursor:pointer;
+  font-weight:500;
+  letter-spacing:1px;
+  font-size: 10px;
+  color: white;
+  list-style: none; 
+  position: absolute;
+  left: 100px; 
+  top: 40px ;
+  font-size: 15px;
+
+}
+.head-A ul{
+  display:flex;
+  list-style:none;
+  gap:35px;
+  /* width: 100%;
+ padding: 15px 10px 10px 50px;
+ background-color: black;
+ border-radius: 30px 30px 0px 0px;
+ border-top: solid white 1px; */
+}
+.head-A li:hover{
+  color:#ffb703;
+}
+
+}
+@media screen and (max-width: 768px) {
+ .cart {
+  top :0;
+  right: -100%;
+  width: 40%; 
+  height: fit-content;
+  z-index: 1000;
+  padding: 25px;
+  background: linear-gradient(180deg,#0f0f0f,#000);
+  box-shadow: -15px 0 60px rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  }
+  .cart-2{
+    right: 0%;
+  }
+  
+}
+  @media screen and (max-width: 900px) {
+  .cart {
+  top :0;
+  right: -100%;
+  width: 50%; 
+  height: fit-content;
+  z-index: 1000;
+  padding: 25px;
+  background: linear-gradient(180deg,#0f0f0f,#000);
+  box-shadow: -15px 0 60px rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  }
+  .cart-2{
+    right: 0%;
+  }
+  
+}
+/* =====================================================
+   RESPONSIVE INJECTION (DO NOT REMOVE OLD CSS)
+   ===================================================== */
+
+/* header ko flex layout dena */
+.main-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* 3 section wrapper */
+.leftHead{ display:flex; align-items:center; }
+.centerHead{ display:flex; justify-content:center; flex:1; }
+.rightHead{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+/* IMPORTANT: absolute positioning cancel */
+.SearchLogo,
+.SearchProduct,
+.showSearch,
+.SearchDropdown,
+.cartIcon,
+.Slid_Bar{
+  position:static !important;
+}
+
+/* dropdown ko relative parent do */
+.SearchBtn{ position:relative; }
+
+.SearchDropdown{
+  position:absolute !important;
+  top:45px;
+  right:0;
+}
+
+/* ================= TABLET ================= */
+@media(max-width:1024px){
+  .main-head{ padding:0 30px; }
+  .head-A ul{ gap:30px; }
+  .mobileNav{
+    display:none;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .main-head{
+    height:70px;
+    /* padding:0 20px; */
+  }
+
+  /* hide menu */
+  .centerHead{
+    display:none;
+  }
+
+  /* logo small */
+  .logo{
+    width:60px;
+    height:60px;
+    margin-top:0;
+  }
+
+  .rightHead{
+    gap:15px;
+  }
+
+  .cartIcon{ font-size:16px; }
+
+  /* search mobile */
+  .SearchProduct{
+    position:absolute !important;
+    top:60px;
+    right:0;
+    width:200px;
+    background:#111;
+  }
+
+  .SearchDropdown{
+    width:200px;
+  }
+  .mobileNav{
+    display:block;
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#000;
+    z-index:998;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobileNav ul{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    list-style:none;
+    padding:10px 5px;
+  }
+
+  .mobileNav li{
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:1px;
+    color:white;
+    cursor:pointer;
+    position:relative;
+  }
+
+  .mobileNav li::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:#ffb703;
+    transition:.3s;
+  }
+
+  .mobileNav li:hover::after{
+    width:100%;
+  }
+
+}
+
+/* =========================================
+   MOBILE SECOND NAV BAR (UNDER HEADER)
+   ========================================= */
+
+/* 560px ke niche activate */
+@media(max-width:560px){
+
+  /* header thoda compact */
+  .main-head{
+    height:70px;
+    padding:0 15px;
+  }
+
+  /* desktop nav hide */
+  .centerHead{
+    display:none;
+  }
+
+  /* second row nav show */
+  .mobileNav{
+    display:block;
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#000;
+    z-index:998;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobileNav ul{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    list-style:none;
+    padding:10px 5px;
+  }
+
+  .mobileNav li{
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:1px;
+    color:white;
+    cursor:pointer;
+    position:relative;
+  }
+
+  .mobileNav li::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0%;
+    height:2px;
+    background:#ffb703;
+    transition:.3s;
+  }
+
+  .mobileNav li:hover::after{
+    width:100%;
+  }
+
+  /* search dropdown position fix */
+  .SearchProduct{
+    position:absolute !important;
+    top:-10px;
+    left: -188px!important;
+    width:180px;
+    z-index: 999;
+    color: white;
+  }
+
+  .SearchDropdown{
+    width:180px;
+    z-index: 999;
+
+  }
+}

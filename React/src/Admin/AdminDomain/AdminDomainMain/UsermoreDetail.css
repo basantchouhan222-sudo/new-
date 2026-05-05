@@ -1,0 +1,177 @@
+
+
+/* main wrapper */
+.MainUserbox{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* resume card */
+.MainUserBox2{
+  width:900px;
+  padding:50px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  box-shadow:0 25px 70px rgba(0,0,0,0.7);
+  color:white;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  transform: translateY(80px);
+  opacity:0;
+  animation: slideUp 1s ease forwards;
+}
+
+/* glowing border */
+.MainUserBox2::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(45deg#00f5ff);
+  z-index:-1;
+  filter:blur(20px);
+  opacity:.6;
+}
+
+/* hover floating */
+.MainUserBox2:hover{
+  transform:translateY(-10px) scale(1.02);
+  transition:.4s;
+}
+
+/* BIG NAME */
+.MainUserBox2 h1:nth-child(2){
+  font-size:60px;
+  margin-bottom:20px;
+  letter-spacing:2px;
+  font-weight:700;
+  color:#00f5ff;
+  text-shadow:0 0 20px rgba(0,245,255,.8);
+}
+
+/* id small */
+.MainUserBox2 h1:first-child{
+  font-size:30px;
+  opacity:.6;
+  letter-spacing:3px;
+}
+
+/* section titles */
+.MainUserBox2 h2{
+  margin-top:30px;
+  font-size:22px;
+  color:#ff7ad9;
+  letter-spacing:1px;
+  border-bottom:2px solid rgba(255,255,255,.2);
+  padding-bottom:8px;
+}
+
+/* detail blocks */
+.MainUserBox2 p{
+  font-size:18px;
+  margin:15px 0;
+  padding:14px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  transition:.3s;
+}
+
+.MainUserBox2 p:hover{
+  background:rgba(0,245,255,.18);
+  transform:translateX(10px);
+}
+/* needed so button can sit inside card */
+.MainUserBox2{
+  position:relative;
+}
+
+/* CLOSE BUTTON */
+.ClosebtnForBack{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:50%;
+  font-size:20px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+
+  background: linear-gradient(45deg,#ff416c,#ff4b2b);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+/* hover animation */
+.ClosebtnForBack:hover{
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* click animation */
+.ClosebtnForBack:active{
+  transform: scale(0.9);
+}
+/* full screen center */
+.LoadingBox{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  flex-direction:column;
+}
+
+/* loading text */
+.loader{
+  color:white;
+  font-family:"Poppins",sans-serif;
+  font-size:32px;
+  letter-spacing:3px;
+  position:relative;
+  margin-top:30px;
+  animation:textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* spinner circle */
+.LoadingBox::before{
+  content:"";
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,0.2);
+  border-top:6px solid #00f5ff;
+  border-bottom:6px solid #ff00cc;
+  animation:spin 0.5s linear infinite;
+}
+
+/* spinner animation */
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+/* glowing text animation */
+@keyframes textGlow{
+  from{
+    text-shadow:0 0 10px #00f5ff;
+  }
+  to{
+    text-shadow:0 0 25px #ff00cc;
+  }
+}
+
+/* animation */
+@keyframes slideUp{
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}

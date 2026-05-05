@@ -1,0 +1,151 @@
+/* PAGE */
+.productsPage{
+  min-height:100vh;
+  background:#0f1115;
+  padding:40px 60px;
+  color:#fff;
+}
+
+/* TITLE */
+.pageTitle{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* GRID (4 CARDS FIXED) */
+.productsGrid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  margin-top: 150px ;
+  gap:28px;
+}
+
+/* Tablet */
+@media (max-width:1100px){
+  .productsGrid{ grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:768px){
+  .productsGrid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:480px){
+  .productsGrid{ grid-template-columns:1fr; }
+}
+
+/* CARD */
+.productCard{
+  background:linear-gradient(145deg,#1a1d24,#111318);
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+  transition:all .35s ease;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+
+/* glowing border */
+.productCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  padding:1px;
+  background:linear-gradient(120deg,#ffb703,#ff6b00,#ffb703);
+  -webkit-mask:
+     linear-gradient(#000 0 0) content-box,
+     linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  opacity:0;
+  transition:.4s;
+
+  pointer-events:none;   /* ⭐ MOST IMPORTANT LINE */
+}
+
+.productCard:hover::before{ opacity:1; }
+
+/* lift */
+.productCard:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 25px 50px rgba(0,0,0,0.9);
+}
+
+/* IMAGE */
+.productCard img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.4s;
+}
+
+.productCard:hover img{ transform:scale(1.08); }
+
+/* NAME */
+.productCard h3{
+  margin:15px 0 8px;
+  font-size:18px;
+}
+
+/* DESC */
+.desc{
+  font-size:14px;
+  color:#aaa;
+  flex:1;
+}
+
+/* PRICE */
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#ffb703;
+  margin:15px 0;
+}
+
+/* BUTTON GROUP */
+.btnGroup{
+  display:flex;
+  gap:10px;
+}
+
+/* BUTTON BASE */
+.cartBtn,.buyBtn{
+  flex:1;
+  padding:11px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  letter-spacing:.5px;
+  transition:.3s;
+}
+
+/* ADD TO CART */
+.cartBtn{
+  background:#232f3e;
+  color:#fff;
+}
+.cartBtn:hover{
+  background:#131a22;
+  transform:translateY(-2px);
+}
+
+/* BUY NOW */
+.buyBtn{
+  background:linear-gradient(90deg,#ffb703,#ff8800);
+  color:#000;
+}
+.buyBtn:hover{
+  background:linear-gradient(90deg,#ffaa00,#ff6a00);
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(255,183,3,0.35);
+}
+.btnGroup{
+  display:flex;
+  gap:10px;
+  position:relative;
+  z-index:2;
+}

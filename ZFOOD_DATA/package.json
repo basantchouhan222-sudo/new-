@@ -1,0 +1,29 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Food web ",
+  "keywords": [
+    "api",
+    "data"
+  ],
+  "license": "ISC",
+  "author": "radha",
+  "type": "commonjs",
+  "main": "Node.js",
+  "scripts": {
+    "test": "start",
+    "start": "npx nodemon Node.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.2",
+    "nodemon": "^3.1.14",
+    "router": "^2.2.0",
+    "slugify": "^1.6.9"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  }
+}

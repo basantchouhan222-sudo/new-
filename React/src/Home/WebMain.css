@@ -1,0 +1,65 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+.hero{
+  width:100%;
+  height:fit-content;
+  position:relative;
+  overflow:hidden;
+  flex-wrap: wrap;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE COMMON ===== */
+@media(max-width:900px){
+  .main-head{
+    padding:20px 30px;
+  }
+
+  .head{
+    display:none;
+  }
+
+  .heroText h1{
+    font-size:40px;
+  }
+
+  .heroText p{
+    font-size:18px;
+  }
+}
+@media screen and (max-width:480px){
+  .main-head{
+    padding:20px;
+  }
+  .hero{
+    height: fit-content;
+  }
+
+  .SearchLogo{
+    right: 200px;
+  }
+  .searchP{
+    right: 300px;
+  } 
+  
+}

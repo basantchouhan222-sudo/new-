@@ -1,0 +1,283 @@
+/* ===== PAGE BACKGROUND ===== */
+.AuthPage{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+  radial-gradient(circle at 30% 30%, #2e2e44, #141420);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== CENTER CARD (40%) ===== */
+.AuthCard{
+  width:50%;
+  height:650px;
+  background:#1b1b2b;
+  border-radius:25px;
+  display:flex;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 50px 120px rgba(0,0,0,0.7);
+  animation: cardPop 0.8s ease;
+}
+
+@keyframes cardPop{
+  from{ transform:scale(.7); opacity:0;}
+  to{ transform:scale(1); opacity:1;}
+}
+
+/* ❌ CLOSE BUTTON */
+.crossLogin{
+  position:absolute;
+  right:18px;
+  top:15px;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  z-index:5;
+  transition:.3s;
+}
+.crossLogin:hover{ transform:rotate(90deg); color:#ff4b4b; }
+
+
+.AuthLeft{
+  width:50%;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  background:#ff7a18;
+}
+
+/* 🔥 GRADIENT BLOBS */
+.AuthLeft::before,
+.AuthLeft::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  opacity:0.5;
+  animation: blobMove 12s infinite alternate ease-in-out;
+}
+
+/* blob 1 */
+.AuthLeft::before{
+  background:#ff3d77;
+  top:-80px;
+  left:-80px;
+}
+
+/* blob 2 */
+.AuthLeft::after{
+  background:#ffd86f;
+  bottom:-80px;
+  right:-80px;
+  animation-delay:4s;
+}
+
+/* 🔥 third blob (extra glow) */
+.AuthLeft span{
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:#ff9a44;
+  filter:blur(70px);
+  opacity:.9;
+  animation: blobMove2 14s infinite alternate ease-in-out;
+}
+
+/* BLOBS MOVEMENT */
+@keyframes blobMove{
+  0%{ transform:translate(0,0) scale(1);}
+  50%{ transform:translate(60px,40px) scale(1.2);}
+  100%{ transform:translate(-40px,60px) scale(0.9);}
+}
+
+@keyframes blobMove2{
+  0%{ transform:translate(0,0) scale(1);}
+  50%{ transform:translate(-50px,-40px) scale(1.3);}
+  100%{ transform:translate(40px,-60px) scale(0.8);}
+}
+
+/* LOTTIE FLOATING */
+.lottie{
+  width:260px;
+  z-index:2;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{ transform:translateY(0px);}
+  50%{ transform:translateY(-25px);}
+  100%{ transform:translateY(0px);}
+}
+/* FLOATING ANIMATION EFFECT */
+.lottie{
+  width:260px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{ transform:translateY(0px);}
+  50%{ transform:translateY(-20px);}
+  100%{ transform:translateY(0px);}
+}
+
+/* ===== RIGHT SIDE FORM ===== */
+.AuthRight{
+  width:50%;
+  padding:50px 35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.AuthRight h1{
+  color:white;
+  margin-bottom:25px;
+}
+
+/* INPUTS */
+.AuthRight input{
+  padding:14px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:#26263a;
+  color:white;
+  outline:none;
+  font-size:15px;
+}
+
+.AuthRight input:focus{
+  border:1px solid #ff7a18;
+  box-shadow:0 0 10px #ff7a1850;
+}
+
+/* LOGIN BUTTON */
+.AuthRight button{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(45deg,#ff7a18,#ffb347);
+  color:white;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:10px;
+  transition:.3s;
+}
+
+.AuthRight button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 30px rgba(255,122,24,0.4);
+}
+
+/* SIGNUP TEXT */
+.signup{
+  text-align:center;
+  color:#bbb;
+  margin-top:20px;
+  cursor:pointer;
+}
+.signup:hover{ color:#ffb347; }
+@media screen and (max-width:1600px){
+  
+  .AuthCard{
+    width:60%;
+  }
+}
+@media screen and (max-width:1400px){
+  
+  .AuthCard{
+    width:70%;
+  }
+}
+@media screen and (max-width:1200px){
+  
+  .AuthCard{
+    width:80%;
+  }
+
+}
+
+@media screen and (max-width:1024px){
+
+  .AuthCard{
+    width:85%;
+    height:auto;
+    flex-direction:column;
+  }
+
+  .AuthLeft{
+    width:100%;
+    height:450px;
+  }
+
+  .AuthRight{
+    width:100%;
+  }
+
+}
+@media screen and (max-width:768px){
+
+  .AuthCard{
+    width:92%;
+    border-radius:20px;
+  }
+
+  .AuthRight{
+    padding:35px 25px;
+  }
+
+  .AuthRight h1{
+    text-align:center;
+    font-size:26px;
+  }
+
+  .AuthRight input{
+    font-size:14px;
+    padding:12px;
+  }
+
+  .AuthRight button{
+    padding:12px;
+    font-size:15px;
+  }
+  .AuthLeft{
+    height:450px;
+  }
+
+}
+@media screen and (max-width:480px){
+
+  .AuthPage{
+    padding:15px;
+  }
+
+  .AuthCard{
+    width:100%;
+    box-shadow:none;
+  }
+
+  .AuthLeft{
+    height:500px;
+  }
+
+  .lottie{
+    width:120px !important;
+      height:120px !important;
+      z-index:999;
+  }
+
+  .crossLogin{
+    font-size:16px;
+    right:12px;
+    top:10px;
+  }
+
+}

@@ -1,0 +1,214 @@
+/* PAGE BACKGROUND */
+.AdminProductListBox{
+  width:100%;
+  min-height:100vh;
+  background:#181a1cb9;
+  display:flex;
+  justify-content:center;
+  padding:40px 0;
+}
+
+/* FULL WIDTH FORM CONTAINER */
+.AdminProductListBox2{
+  width:1100px;
+  background:white;
+  margin-left:0px;
+  padding:50px 80px 70px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  position:relative; 
+}
+
+/* HEADING */
+.AdminProductListBox2::before{
+  content:"Add New Product";
+  display:block;
+  text-align:center;
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:50px;
+  color:#1d3557;
+  letter-spacing:1px;
+}
+
+/* INPUT STYLE */
+.AdminProductListBox2 input{
+  width:100%;
+  padding:18px 20px;
+  border-radius:10px;
+  border:1px solid #dcdcdc;
+  font-size:16px;
+  transition:0.3s;
+  background:#f9fbfd;
+}
+
+/* INPUT HOVER */
+.AdminProductListBox2 input:hover{
+  border-color:#457b9d;
+  background:#ffffff;
+}
+
+/* INPUT FOCUS */
+.AdminProductListBox2 input:focus{
+  outline:none;
+  border-color:#1d3557;
+  box-shadow:0 0 0 4px rgba(29,53,87,0.12);
+  background:white;
+}
+
+/* PLACEHOLDER */
+.AdminProductListBox2 input::placeholder{
+  color:#8d99ae;
+  letter-spacing:0.5px;
+}
+
+/* FOOD LABEL */
+.Food-select{
+  font-size:16px;
+  font-weight:600;
+  color:#1d3557;
+  margin-top:10px;
+  margin-bottom:-10px;
+  letter-spacing:0.5px;
+}
+
+/* SELECT BOX */
+.SetFood{
+  width:100%;
+  padding:5px 20px;
+  border-radius:10px;
+  border:1px solid #dcdcdc;
+  font-size:16px;
+  background:#f9fbfd;
+  cursor:pointer;
+  transition:0.3s;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+
+  /* custom arrow */
+  background-image:url("data:image/svg+xml;utf8,<svg fill='%231d3557' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 18px center;
+  background-size:18px;
+}
+
+/* SELECT HOVER */
+.SetFood:hover{
+  border-color:#457b9d;
+  background:#ffffff;
+}
+
+/* SELECT FOCUS */
+.SetFood:focus{
+  outline:none;
+  border-color:#1d3557;
+  box-shadow:0 0 0 4px rgba(29,53,87,0.12);
+  background:white;
+}
+
+/* OPTION STYLE */
+.SetFood option{
+  background:white;
+  color:#1d3557;
+  font-size:15px;
+  padding:10px;
+}
+
+/* ADD PRODUCT BUTTON */
+.addProductBtn{
+  margin-top:20px;
+  padding:20px;
+  border:none;
+  border-radius:12px;
+  background:#1d3557;
+  color:white;
+  font-size:20px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+/* BUTTON HOVER */
+.addProductBtn:hover{
+  background:#457b9d;
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* BUTTON CLICK */
+.addProductBtn:active{
+  transform:scale(0.98);
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}/* PHOTO ROW (input + button same line) */
+.photoRow{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+/* PHOTO INPUT SMALL WIDTH */
+.photoInput{
+  flex:1;
+}
+
+/* UPLOAD BUTTON */
+.UploadPhotoBtn{
+  width:180px;
+  height:56px;
+  border:none;
+  border-radius:10px;
+  background:#457b9d;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* HOVER */
+.UploadPhotoBtn:hover{
+  background:#1d3557;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* CLICK */
+.UploadPhotoBtn:active{
+  transform:scale(0.97);
+}
+/* CLOSE / BACK BUTTON */
+.CrossForBack{
+  position:absolute;
+  top:25px;
+  right:25px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:none;
+  background:#e63946;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* hover animation */
+.CrossForBack:hover{
+  background:#c1121f;
+  transform:rotate(90deg) scale(1.1);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* click animation */
+.CrossForBack:active{
+  transform:scale(0.9);
+}

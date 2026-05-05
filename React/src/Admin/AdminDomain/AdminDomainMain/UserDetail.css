@@ -1,0 +1,91 @@
+/* Page background */
+body {
+  background: #0f172a;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Container card */
+.container {
+  width: 2000px;
+  /* margin: 50px auto; */
+  padding: 30px;
+  background: #111827;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+/* Header section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Total user badge */
+.count {
+  background: #6366f1;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #e5e7eb;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Header */
+.table th {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Table rows */
+.table td {
+  padding: 14px;
+  color: #cbd5e1;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Zebra rows */
+.table tr:nth-child(even) {
+  background: #0b1220;
+}
+
+/* Hover effect */
+.table tr:hover {
+  background: #1f2937;
+  transition: 0.3s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
