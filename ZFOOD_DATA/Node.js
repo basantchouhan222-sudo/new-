@@ -11,6 +11,12 @@ require("./mongoo");
 
 const Router = require("./Router");
 app.use("/api", Router);
+app.get("/"(req,res)=>{
+  res.send({
+    activestatus: true,
+    error : false,
+  })
+})
 
 const PORT = process.env.PORT || 4000;
 
