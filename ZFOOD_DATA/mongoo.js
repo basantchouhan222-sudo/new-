@@ -2,7 +2,7 @@ const { time, timeStamp } = require("console");
 const mongoose = require("mongoose");
 const { type } = require("os");
 
-mongoose.connect("mongodb+srv://basantchouhan222_db_user:8czbChwJFAlc3hFf@clustersumit11.wwutvjq.mongodb.net/ClusterSumit11")
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
