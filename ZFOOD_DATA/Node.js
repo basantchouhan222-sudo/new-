@@ -11,7 +11,7 @@ require("./mongoo");
 
 const Router = require("./Router");
 app.use("/api", Router);
-app.get("/"(req,res)=>{
+app.get("/",(req,res)=>{
   res.send({
     activestatus: true,
     error : false,

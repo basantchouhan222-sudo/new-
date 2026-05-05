@@ -1,10 +1,9 @@
-const { time, timeStamp } = require("console");
+require("dotenv").config();
 const mongoose = require("mongoose");
-const { type } = require("os");
 
 mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("Mongo Error:", err));
 
 const UserSchema = new mongoose.Schema({
   Name: { type: String, required: true },
