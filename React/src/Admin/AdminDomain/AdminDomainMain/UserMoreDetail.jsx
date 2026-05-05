@@ -8,7 +8,7 @@ function UserMoreDetail(){
 
 
    const  UserDetail = async ()=>{
-    const res = await fetch(`http://localhost:4000/api/datas/${id}`);
+    const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/datas/${id}`);
     const UserDetail = await res.json()
     SetUserdata(UserDetail.data)  
    }

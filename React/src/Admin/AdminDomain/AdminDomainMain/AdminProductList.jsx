@@ -68,7 +68,7 @@ function AdminProductList(){
             return toast.error("Add at least 1 photo")
 
 try{
-    const res = await fetch("http://localhost:4000/api/product",{
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/product",{
         method :"POST" ,
         headers :{
             "Content-Type" :"application/json"

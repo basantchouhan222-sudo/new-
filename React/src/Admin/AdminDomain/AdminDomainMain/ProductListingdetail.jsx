@@ -21,7 +21,7 @@ const id = idslug.split("-")[0];
   console.log(idslug)
 
   const fetchProduct = async () => {
-    const res = await fetch(`http://localhost:4000/api/product/${id}`);
+    const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/product/${id}`);
     const data = await res.json();
     setProduct(data.data|| data);
     setFormData(data.data || data);
@@ -37,7 +37,7 @@ const id = idslug.split("-")[0];
 
   // 🔹 PATCH update
   const updateProduct = async () => {
-    const res = await fetch(`http://localhost:4000/api/product/${id}`, {
+    const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/product/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

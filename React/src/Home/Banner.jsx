@@ -18,7 +18,7 @@ function Banner() {
   const { addToCart } = useCart()
 
   const CartFor = async()=>{
-    const res = await fetch("http://localhost:4000/api/product")
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/product")
     const Data = await res.json()
     SetShowProduct(Data.data || Data)
   }

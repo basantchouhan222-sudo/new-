@@ -13,7 +13,7 @@ function UserDetail(){
     },[])
 
    async function UserSerarch() { 
-    const res = await fetch("http://localhost:4000/api/data")
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/data")
     const UserData = await res.json()
     setUser(UserData)
 

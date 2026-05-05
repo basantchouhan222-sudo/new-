@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
     async function Adminsighupbtn(e) {
          e.preventDefault(); 
-         const res = await fetch("http://localhost:4000/api/admin")
+         const res = await fetch("https://new-eight-alpha-24.vercel.app/api/admin")
          const AdminData = await res.json()
        
 
@@ -49,7 +49,7 @@ import { useNavigate } from "react-router-dom";
 
     try {
 
-    const res = await fetch("http://localhost:4000/api/admin",{
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/admin",{
         method :"POST",
         headers :{
             "Content-Type" :"application/json"

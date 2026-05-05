@@ -16,7 +16,7 @@ function AdminLogin(){
         try{
 
         
-    const res = await fetch("http://localhost:4000/api/admin")
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/admin")
     const Admindata = await res.json()
 
    const findAdmin = Admindata.find((data)=> {

@@ -12,7 +12,7 @@ function ProductList() {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await fetch("http://localhost:4000/api/product");
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/product");
     const data = await res.json();
     setProducts(data.data || data);
   };
@@ -23,7 +23,7 @@ function ProductList() {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:4000/api/product/${id}`, {
+      const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/product/${id}`, {
         method: "DELETE",
       });
 

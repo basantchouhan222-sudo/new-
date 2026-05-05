@@ -12,7 +12,7 @@ function Login() {
 
 async function Crack() {
   try{
-     const res = await fetch("http://localhost:4000/api/data")
+     const res = await fetch("https://new-eight-alpha-24.vercel.app/api/data")
     const Data = await res.json()
 
      const  Findit = 
