@@ -12,7 +12,7 @@
   "main": "Node.js",
   "scripts": {
     "test": "start",
-    "start": "npx nodemon Node.js"
+    "start": "npx nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.2",
