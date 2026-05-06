@@ -153,18 +153,17 @@ function ProductListDetail() {
 
               {/* ⭐ PHOTO EDIT SECTION */}
               <h3>Product Photos (Min 5)</h3>
+<h3>Product Photos</h3>
 
-              {formData.Photo.map((photo, index) => (
-                <input
-                  key={index}
-                  type="text"
-                  value={photo}
-                  placeholder={`Photo URL ${index + 1}`}
-                  onChange={(e) =>
-                    handlePhotoChange(index, e.target.value)
-                  }
-                />
-              ))}
+{formData.Photo?.map((photo, index) => (
+  <input
+    key={index}
+    type="text"
+    value={photo}
+    placeholder={`Photo URL ${index + 1}`}
+    onChange={(e) => handlePhotoChange(index, e.target.value)}
+  />
+))}
 
               <div className="btnRow">
                 <button className="saveBtn" onClick={updateProduct}>
