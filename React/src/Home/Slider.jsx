@@ -41,7 +41,7 @@ function Slider({ cartbtn, close}) {
     <div className={cartbtn}>
     <div className="Loggercontent">
       <p>WELCOME</p>
-  <div className="LogginLogo">{UserLog.length === 1 ? UserLog : " "}</div>
+  <div className="LogginLogo" onClick={()=>{navigate("/Login/User-DetailMore")}}>{UserLog.length === 1 ? UserLog : " "} </div>
   <p>{UserData}</p>
 <button onClick={()=>{logoutbtn()}} className="LogOutbtn" >LOG OUT</button>
 </div>

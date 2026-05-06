@@ -49,7 +49,6 @@ async function Crack() {
   <div className="AuthPage">
     <div className="AuthCard">
 
-      {/* ❌ CLOSE BUTTON */}
       <div className="crossLogin" onClick={()=>Navigate("/")}>✖</div>
 
       {/* LEFT ANIMATION */}

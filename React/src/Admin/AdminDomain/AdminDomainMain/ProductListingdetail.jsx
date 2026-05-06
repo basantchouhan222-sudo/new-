@@ -17,8 +17,6 @@ const id = idslug.split("-")[0];
   useEffect(() => {
     fetchProduct();
   }, [id]);
-  console.log(id)
-  console.log(idslug)
 
   const fetchProduct = async () => {
     const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/product/${id}`);

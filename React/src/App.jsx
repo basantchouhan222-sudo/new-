@@ -20,6 +20,7 @@ import { ProductOrder } from "./Home/WebAbout/OrderProduct";
 import { FOODsearch } from "./Home/WebAbout/FOODsearch";
 import CartPage from "./context/CartPage";
 import { BuyPoduct } from "./Home/WebAbout/BUYProduct";
+import { UserDetailMore } from "./Home/User-Detail";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/admin" element={<AdminSighup />} />
         <Route path="/Login" element = {<Login/>}/>
+        <Route path="Login/User-DetailMore" element = {<UserDetailMore/>}/>
         <Route path="/Sighup" element = {<SighupForm/>}/>
         <Route path="/About" element = {<ABOUT/>}/>
         <Route path="/Contact" element = {<CONTACT/>}/>
