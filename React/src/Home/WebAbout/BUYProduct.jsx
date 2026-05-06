@@ -43,7 +43,7 @@ const handlePayment = async () => {
     user: "Demo User"
   };
   try {
-    const res = await fetch("http://localhost:4000/api/order", {
+    const res = await fetch("https://new-eight-alpha-24.vercel.app/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

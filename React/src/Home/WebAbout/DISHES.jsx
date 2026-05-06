@@ -14,7 +14,7 @@ function DISHES(){
 
   
   useEffect(() => {
-    fetch("http://localhost:4000/api/product")
+    fetch("https://new-eight-alpha-24.vercel.app/api/product")
       .then(res => res.json())
       .then(data => {
         const productArray = data.data || data;

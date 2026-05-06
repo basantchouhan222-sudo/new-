@@ -22,7 +22,7 @@ function FOODsearch() {
 const getFood = async () => {
   try {
     setLoading(true);
-    const res = await fetch(`http://localhost:4000/api/product/${idslug}`);
+    const res = await fetch(`https://new-eight-alpha-24.vercel.app/api/product/${idslug}`);
     const data = await res.json();
     setFood(data.data || data);
   } catch (err) {
@@ -34,7 +34,7 @@ const getFood = async () => {
 useEffect(() => {
   const getAllFood = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/product");
+      const res = await fetch("https://new-eight-alpha-24.vercel.app/api/product");
       const data = await res.json();
       setFoodList(data.data || data);
     } catch (err) {
