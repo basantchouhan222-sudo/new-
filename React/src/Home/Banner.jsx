@@ -23,6 +23,7 @@ function Banner() {
     SetShowProduct(Data.data || Data)
   }
 
+
   useEffect(()=>{
     CartFor()
   },[])

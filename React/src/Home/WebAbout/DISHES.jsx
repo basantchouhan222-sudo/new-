@@ -57,7 +57,7 @@ const handleBuyNow = (product) => {
       <WebHeader />
 
       <div className="productsPage">
-        <h1 className="pageTitle">🔥 Our Foods</h1>
+        <h1 className="pageTitle">Our Foods</h1>
 
         <div className="productsGrid">
 

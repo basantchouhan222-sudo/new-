@@ -17,7 +17,7 @@ function ProductList() {
     setProducts(data.data || data);
   };
 
-  
+ //https://new-eight-alpha-24.vercel.app/
   const deleteProduct = async (id) => {
     const confirmDelete = window.confirm("Delete this product?");
     if (!confirmDelete) return;
